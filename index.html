@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>aHTTP Client</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main>
+        <h1>aHTTP Client</h1>
+
+        <section class="panel" aria-labelledby="request-heading">
+            <h2 id="request-heading">Request</h2>
+            <div class="row method-url">
+                <select id="method" aria-label="HTTP method">
+                    <option value="GET">GET</option>
+                    <option value="HEAD">HEAD</option>
+                    <option value="POST">POST</option>
+                    <option value="PUT">PUT</option>
+                    <option value="PATCH">PATCH</option>
+                    <option value="DELETE">DELETE</option>
+                    <option value="OPTIONS">OPTIONS</option>
+                    <option value="CONNECT">CONNECT</option>
+                    <option value="TRACE">TRACE</option>
+                </select>
+                <input id="url" type="url" placeholder="https://api.example.com/resource" autocomplete="off"
+                    spellcheck="false" />
+                <button type="button" id="send" class="btn-primary">Send</button>
+            </div>
+        </section>
+
+        <section class="panel" aria-labelledby="params-heading">
+            <div class="toolbar">
+                <h2 id="params-heading" style="margin: 0">Query parameters</h2>
+                <button type="button" id="add-param" class="btn-ghost">+ Add parameter</button>
+            </div>
+            <div id="params"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="req-headers-heading">
+            <div class="toolbar">
+                <h2 id="req-headers-heading" style="margin: 0">Request headers</h2>
+                <button type="button" id="add-header" class="btn-ghost">+ Add header</button>
+            </div>
+            <div id="headers"></div>
+            <p class="hint">Empty header names are ignored. For JSON body, <code>Content-Type</code> is set to
+                <code>application/json</code> unless you set it here.</p>
+        </section>
+
+        <section class="panel" aria-labelledby="body-heading">
+            <h2 id="body-heading">Body</h2>
+            <textarea id="body" placeholder='{ "key": "value" }' spellcheck="false"></textarea>
+            <p class="hint">Enabled for POST, PUT, PATCH, and DELETE only.</p>
+        </section>
+
+        <section class="panel" aria-labelledby="response-heading">
+            <h2 id="response-heading">Response</h2>
+            <div class="response-meta">
+                <span id="status" class="status-badge empty-response">—</span>
+            </div>
+            <h2 style="margin-top: 0.5rem">Headers</h2>
+            <pre id="response-headers" class="empty-response">Send a request to see headers.</pre>
+            <h2 style="margin-top: 1rem">Body</h2>
+            <pre id="response-body" class="empty-response"></pre>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
