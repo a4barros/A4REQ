@@ -7,7 +7,7 @@ function createWindow() {
     const { _, height } = primaryDisplay.workAreaSize;
 
     const win = new BrowserWindow({
-        width: 800,
+        width: 1200,
         height: height / 1.5,
         zoom: 2,
         webPreferences: {
@@ -20,7 +20,7 @@ function createWindow() {
     win.loadFile("index.html");
 }
 
-Menu.setApplicationMenu(null);
+// Menu.setApplicationMenu(null);
 
 app.whenReady().then(createWindow);
 

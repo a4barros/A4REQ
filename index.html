@@ -12,6 +12,9 @@
     <main>
         <h1>AHTTP Client</h1>
 
+        <section class="panel">
+            a
+        </section>
         <section class="panel" aria-labelledby="request-heading">
             <h2 id="request-heading">Request</h2>
             <div class="row method-url">
@@ -27,7 +30,7 @@
                     <option value="TRACE">TRACE</option>
                 </select>
                 <input id="url" type="url" placeholder="https://api.example.com/resource" autocomplete="off"
-                    spellcheck="false" />
+                    spellcheck="false" autofocus/>
                 <button type="button" id="send" class="btn-primary">Send</button>
             </div>
         </section>
@@ -67,7 +70,7 @@
             <pre id="response-body" class="empty-response"></pre>
         </section>
     </main>
-    <script src="app.js"></script>
+    <script type="module" src="./app.js"></script>
 </body>
 
 </html>
